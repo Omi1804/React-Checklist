@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,400;1,500&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Karla', sans-serif;   
+    box-sizing: border-box;
+}
+main{
+    background-color:#202124;
+    width: 100%;
+    height: 100vh;
+    display: flex; /* Add this property */
+    justify-content: center; /* Add this property */
+    align-items: center;
+    overflow: hidden;
+}
+.no_notes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    color: #9AA0A5;
+}
+.nnButton{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.7rem 2rem;
+    font-family: "karla", sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
+    color:white;
+    backface-visibility: hidden;
+    border: 0.3rem solid transparent;
+    border-radius: 3rem; 
+    background-color: #0A99FE;
+}
+  .nnButton:hover {
+    transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+  }
+.main_notes{
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+.sidebar_header{
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: white;
+    border-bottom: .1px solid #9AA0A5;
+}
+.notesArray{
+    width: 100%;
+    height: 45.3rem;
+    overflow: scroll;
+}
+.noteCard{
+    background-color: #0A99FE;
+    height: 3rem;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.noteCard>button{
+    display: none;
+    background: none;
+    border: none;
+}
+.noteCard:hover > button{
+    display: block;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+.sideButton{
+    width: 2rem;
+    height: 2rem;
+    background-color: #0A99FE;
+    color: white;
+    border: 1px solid #9AA0A5;
+    font-size: 1.2rem;
+}
+.sideButton:hover{
+    transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+}
+.sidebar{
+    border-right: .1px solid #9AA0A5;
+}
+.editor{
+}
+.editorTitle{
+    width: 100%;
+    height: 6.3rem;
+}
+.editorTitle>input{
+    width: 100%;
+    height: inherit;
+    background-color: #202124;
+    color: white;
+    text-indent: 3rem;
+    font-size: 1.4rem;
+    outline: none;
+    border: none;
+}
+.editorTitle>input:focus{
+    border: 2px solid #0A99FE;
+}
+.editorMsg{
+    width: 100%;
+    height: 45.3rem;
+}
+.editorMsg>textarea{
+    width: 100%;
+    height: inherit;
+    background-color: #202124;
+    font-size: 1.4rem;
+    color: white;
+    padding: 3rem;
+    border: none;
+    outline: none;
+}
+.editorMsg>textarea:focus{
+    border: 2px solid #0A99FE;
+}
+
+/* For mobile  */
+
+@media (max-width: 768px) {
+    main {
+      flex-direction: column;
+    }
+  
+    .main_notes {
+      grid-template-columns: 1fr;
+    }
+  
+    .sidebar {
+      border-right: none;
+      border-bottom: .1px solid #9AA0A5;
+      padding-bottom: 2rem;
+      height: 30vh;
+      overflow: scroll;
+    }
+    .sidebar_header {
+        position: sticky;
+        top: 0;
+        background-color: #202124;
+        z-index: 1;
+      }
+  
+    .notesArray {
+      height: auto;
+      overflow: visible;
+    }
+    .editorTitle > input {
+      text-indent: 3rem;
+    }
+    .editorTitle>input:focus{
+        border-top:2px solid #202124;
+        border-left:2px solid #202124;
+        border-right:2px solid #202124;
+    }
+
+
+  }
+  
